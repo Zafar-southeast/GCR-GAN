@@ -1,0 +1,48 @@
+seed: 1203
+output_dir: artifacts/gcr_gan_acm_v9
+
+dataset:
+  # The paper identifies ACM Citation Network V9 via AMiner but gives the
+  # same generic AMiner URL. Supply the extracted V9 JSON/legacy text here.
+  path: data/raw/acm_v9.txt
+  format: auto
+  train_ratio: 0.80
+
+network:
+  undirected: true
+  include_coauthor_edges: true
+
+specter:
+  model_name: allenai/specter
+  # The paper calls SPECTER pre-trained; no ACM-specific fine-tuning schedule
+  # is reported. Set true only to audit the optional reconstruction path.
+  fine_tune: false
+  epochs: 1
+  batch_size: 16
+  learning_rate: 0.00002
+  margin: 1.0
+  max_length: 512
+  expected_dimension: 768
+  deduplicate_texts: true
+
+gcr_gan:
+  latent_dim: 150
+  noise_dim: 150
+  generator_hidden_dim: 300
+  corruption_probability: 0.30
+  gradient_penalty: 10.0
+  learning_rate: 0.001
+  batch_size: 64
+  epochs: 100
+  discriminator_steps: 5
+  generator_steps: 1
+  checkpoint_every_epochs: 1
+  resume_from_checkpoint: false
+  max_dense_batch_mb: 2048
+
+evaluation:
+  score_variant: semantic
+  map_k: 10
+  ndcg_k: 100
+  recall_ks: [20, 40, 60, 80, 100]
+  query_batch_size: 32

@@ -1,0 +1,14 @@
+{
+  "paper": "GCR-GAN, ACM Network V9, Table 4",
+  "metrics": {
+    "MAP": 0.628,
+    "nDCG": 0.705,
+    "Recall@20": 0.621,
+    "Recall@40": 0.725,
+    "Recall@60": 0.774,
+    "Recall@80": 0.803,
+    "Recall@100": 0.821
+  },
+  "metric_mapping": {"MAP": "MAP@10"},
+  "unresolved_cutoffs": ["The paper does not state the nDCG cutoff."]
+}

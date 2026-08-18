@@ -1,0 +1,14 @@
+{
+  "paper": "GCR-GAN, DBLP-V12 non-personalized GCR-GANn, Table 5",
+  "metrics": {
+    "MAP": 0.598,
+    "nDCG": 0.635,
+    "Recall@20": 0.556,
+    "Recall@40": 0.623,
+    "Recall@60": 0.654,
+    "Recall@80": 0.682,
+    "Recall@100": 0.723
+  },
+  "metric_mapping": {"MAP": "MAP@10"},
+  "unresolved_cutoffs": ["The paper does not state the nDCG cutoff."]
+}
