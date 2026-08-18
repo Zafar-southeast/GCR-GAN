@@ -1,0 +1,27 @@
+cff-version: 1.2.0
+message: "Please cite the original GCR-GAN paper when using this implementation."
+title: "Paper-grounded implementation of GCR-GAN"
+type: software
+version: 1.3.0
+date-released: 2026-08-17
+authors:
+  - family-names: Ali
+    given-names: Zafar
+references:
+  - type: article
+    title: "Global Citation Recommendation employing Generative Adversarial Network"
+    authors:
+      - family-names: Ali
+        given-names: Zafar
+      - family-names: Qi
+        given-names: Guilin
+      - family-names: Khan
+        given-names: Muhammad
+      - family-names: Kefalas
+        given-names: Pavlos
+      - family-names: Khusro
+        given-names: Shah
+    journal: "Expert Systems with Applications"
+    volume: 180
+    year: 2021
+    doi: "10.1016/j.eswa.2021.114888"

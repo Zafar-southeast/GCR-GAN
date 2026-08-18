@@ -1,0 +1,39 @@
+[build-system]
+requires = ["setuptools>=69", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "gcr-gan-citation"
+version = "1.3.0"
+description = "Paper-grounded implementation of GCR-GAN for global citation recommendation"
+readme = "README.md"
+requires-python = ">=3.10"
+license = "MIT"
+authors = [{name = "Zafar Ali et al."}]
+dependencies = [
+  "numpy>=1.26,<3",
+  "scipy>=1.11,<2",
+  "PyYAML>=6.0,<7",
+  "tqdm>=4.66,<5",
+  "torch>=2.2,<3",
+  "transformers>=4.41,<5",
+  "accelerate>=0.30,<2",
+  "datasets>=2.19,<5",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=8.2,<9", "ruff>=0.5,<1"]
+
+[project.scripts]
+gcr-gan = "citation_models.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-ra"
+
+[tool.ruff]
+line-length = 100
+target-version = "py310"
